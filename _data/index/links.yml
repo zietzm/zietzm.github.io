@@ -1,18 +1,29 @@
 # links section data
-- last_name: Name 1
+- last_name: <a href="https://www.physics.upenn.edu/people/undergrad/michael-zietz-0" target="_blank">UPenn Physics Major Webpage</a>
   first_name:
-  desc: CEO
-  website: https://www.google.com
-  email: ceo@google.com
+  desc: School email
+  website: https://www.physics.upenn.edu/people/undergrad/michael-zietz-0
+  email: zietz@sas.upenn.edu
 
-- last_name: Donate
-  first_name: Jalpc
-  desc: Support Jalpc
-  website: http://www.jarrekk.com/donate/
-  email: me@jarrekk.com
+# - last_name: <a href="https://github.com/zietzm" target="_blank">GitHub</a>
+#   first_name:
+#   desc: <a href="https://github.com/zietzm" target="_blank">@zietzm</a>
+#   website: https://github.com/zietzm
 
-- last_name: LN
-  first_name: FN
-  desc: COO
-  website: https://github.com
-  email: coo@google.com
+- last_name: <a href="https://orcid.org/0000-0003-0539-630X" target="_blank">ORCID</a>
+  first_name:
+  desc: <a href="https://orcid.org/0000-0003-0539-630X" target="_blank">0000-0003-0539-630X</a>
+  website: https://orcid.org/0000-0003-0539-630X
+  # email: me@jarrekk.com
+
+- last_name: <a href="https://publons.com/researcher/1613732/michael-zietz/" target="_blank">Publons</a>
+  first_name:
+  desc: Academic peer reviews
+  website: https://publons.com/researcher/1613732/michael-zietz/
+
+
+# - last_name: LN
+#   first_name: FN
+#   desc: COO
+#   website: https://github.com
+#   email: coo@google.com
