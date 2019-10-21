@@ -26,7 +26,7 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: icon-python
     - name: icon-cplusplus
-  desc: Senior at Penn interested in Computational Biology and Biomedical Data Science  # Describe yourself.
+  desc: PhD student in Biomedical Informatics at Columbia University
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.

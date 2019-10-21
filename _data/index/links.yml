@@ -1,9 +1,9 @@
 # links section data
-- last_name: <a href="https://www.physics.upenn.edu/people/undergrad/michael-zietz-0" target="_blank">UPenn Physics Major Webpage</a>
-  first_name:
-  desc: School email
-  website: https://www.physics.upenn.edu/people/undergrad/michael-zietz-0
-  email: zietz@sas.upenn.edu
+# - last_name: <a href="https://www.physics.upenn.edu/people/undergrad/michael-zietz-0" target="_blank">UPenn Physics Major Webpage</a>
+#   first_name:
+#   desc: School email
+#   website: https://www.physics.upenn.edu/people/undergrad/michael-zietz-0
+#   email: zietz@sas.upenn.edu
 
 # - last_name: <a href="https://github.com/zietzm" target="_blank">GitHub</a>
 #   first_name:
@@ -21,9 +21,7 @@
   desc: Academic peer reviews
   website: https://publons.com/researcher/1613732/michael-zietz/
 
-
-# - last_name: LN
-#   first_name: FN
-#   desc: COO
-#   website: https://github.com
-#   email: coo@google.com
+- last_name: <a href="course-notes/" target="_blank">Course notes</a>
+  first_name:
+  desc:
+  website: https://zietzm.com/course-notes/
