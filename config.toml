@@ -1,0 +1,115 @@
+baseurl = "http://www.example.com"
+title = "Michael Zietz"
+
+theme = "hugo-coder"
+
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+canonifyurls = true
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+
+# To allow raw HTML in markdown
+[markup.goldmark.renderer]
+unsafe= true
+
+staticDir = ["static"]
+
+[params]
+    author = "Michael Zietz"
+    description = "Michael Zietz's personal website"
+    keywords = "zietz,michael,zietzm,personal,academic"
+    info = "Statistical genetics, Biomedical informatics"
+    avatarurl = "images/headshot.jpg"
+    #footercontent = "Enter a text here."
+
+    dateformat = "February 1, 2010"
+
+    hideFooter = true
+    hideCredits = true
+    hideCopyright = true
+    since = 2020
+
+    rtl = false
+
+    # Specify light/dark colorscheme
+    # Supported values: "auto" (use preference set by browser), "dark", "light"
+    colorscheme = "light"
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+    # Custom CSS
+    custom_css = []
+
+    # Custom JS
+    custom_js = []
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/zietzm/"
+[[params.social]]
+    name = "Google Scholar"
+    icon = "ai ai-google-scholar-square"
+    weight = 2
+    url = "https://scholar.google.com/citations?user=UsyldQoAAAAJ&hl=en"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 3
+    url = "https://twitter.com/ZietzMichael/"
+[[params.social]]
+    name = "Email"
+    icon = "fa fa-envelope-open"
+    weight = 4
+    url = "mailto:michael.zietz@gmail.com"
+[[params.social]]
+    name = "ORCID"
+    icon = "ai ai-orcid"
+    weight = 5
+    url = "https://orcid.org/0000-0003-0539-630X"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 6
+    url = "https://www.linkedin.com/in/michael-zietz-a12b8040/"
+
+
+[languages]
+    [languages.en]
+        languagename = "English"
+
+        [languages.en.menu]
+
+            [[languages.en.menu.main]]
+            name = "About"
+            weight = 1
+            url = "about/"
+
+            #[[languages.en.menu.main]]
+            #name = "Posts"
+            #weight = 2
+            #url = "posts/"
+
+            [[languages.en.menu.main]]
+            name = "Notes"
+            weight = 2
+            url = "course-notes/"
+
+            [[languages.en.menu.main]]
+            name = "Contact"
+            weight = 4
+            url = "contact/"
+
