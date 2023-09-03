@@ -17,6 +17,6 @@ social_profile: true
 
 Michael Zietz conducts research in the Department of Biomedical Informatics at Columbia University, advised by [Nicholas Tatonetti](https://tatonettilab.org).
 His research develops new statistical methods for analyzing large genetic and electronic health record datasets.
-He is particularly interested in understanding the genetic basis of complex disease and deciphering the complex relationships between genotypes and phenotypes.
+He is particularly interested in understanding the genetic basis of common disease and deciphering the complex relationships between genotypes and phenotypes.
 Past and current projects include developing a new genetic risk estimation method, devising methods to increase the speed of pan-biobank GWAS, creating a summary-statistic-based GWAS method, and conducting observational research using electronic health records.
 He was previously at the University of Pennsylvania, where he worked with [Casey Greene](https://greenelab.com/), receiving BA and MS degrees in Physics in 2019.
