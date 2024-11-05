@@ -11,8 +11,6 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  console.log(pathname === "/publications");
-
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -36,14 +34,17 @@ export default function Header() {
 
   return (
     <div
-      className={`w-full mx-auto sticky top-0 ${isOpen ? "bg-accent" : "bg-white"} ${
+      className={`w-full mx-auto sticky top-0 ${isOpen ? "bg-accent" : "bg-background"} ${
         isScrolled ? "shadow-sm border-b md:border-b md:shadow-none" : ""
       }`}
     >
       <div
         className={`w-full mx-auto px-4 flex flex-row max-w-4xl justify-between h-16 items-center w-full ${isOpen ? "bg-accent" : "bg-background"}`}
       >
-        <Link href="/">
+        <Link
+          href="/"
+          className="dark:border dark:border-1 dark:rounded-md dark:border-white"
+        >
           <Image alt="logo" src={faviconUrl} className="h-8 w-8 mx-2 md:mx-0" />
         </Link>
 

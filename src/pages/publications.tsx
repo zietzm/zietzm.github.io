@@ -1,5 +1,6 @@
 import Publication, { PublicationProps } from "@/components/publication";
 import Head from "next/head";
+import Script from "next/script";
 
 const publications: PublicationProps[] = [
   {
@@ -276,6 +277,10 @@ export default function Publications() {
           <Publication key={publication.title} {...publication} />
         ))}
       </div>
+      <Script
+        type="text/javascript"
+        src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"
+      ></Script>
     </div>
   );
 }

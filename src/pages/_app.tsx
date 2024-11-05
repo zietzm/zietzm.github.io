@@ -12,9 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </main>
       </div>
-      <div className="max-w-5xl">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
