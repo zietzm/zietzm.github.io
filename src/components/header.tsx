@@ -29,7 +29,7 @@ export default function Header() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/publications", label: "Publications" },
-    { href: "/projects", label: "Projects" },
+    // { href: "/projects", label: "Projects" },
   ];
 
   return (

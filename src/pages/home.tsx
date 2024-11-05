@@ -49,14 +49,14 @@ export default function HomePage() {
               public website. WebGWAS gives researchers access to a common
               genetic analysis in seconds instead of days, without needing to
               download private data.{" "}
-              <Link href="/projects#webgwas">Read more</Link>.
+              {/*<Link href="/projects#webgwas">Read more</Link>.*/}
             </li>
             <li>
               <b>MaxGCP</b> - A data-driven method for defining disease states
               in observational data. MaxGCP is a new statistical method that
               gives a principled way to incorporate rich, high-dimensional data,
               boosting statistical power for common genetic tests.{" "}
-              <Link href="/projects#maxgcp">Read more</Link>.
+              {/*<Link href="/projects#maxgcp">Read more</Link>.*/}
             </li>
             {/*<li>
               <b>COVID blood type study</b> - I led one of the first studies in
