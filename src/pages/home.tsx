@@ -2,7 +2,6 @@ import headshotUrl from "@/assets/headshot.jpg";
 import { ExternalLink } from "lucide-react";
 import Socials from "@/components/socials";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function HomePage() {
   return (
