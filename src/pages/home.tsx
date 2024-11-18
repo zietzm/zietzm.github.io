@@ -68,9 +68,9 @@ export default function HomePage() {
           <div className="flex flex-col">
             <b>Education</b>
             <ul className="list-disc list-inside">
-              <li>PhD - Columbia University, Biomedical Informatics, 2024</li>
-              <li>MS - University of Pennsylvania, Physics, 2019</li>
-              <li>BA - University of Pennsylvania, Physics, 2019</li>
+              <li>PhD - Columbia University, Biomedical Informatics</li>
+              <li>MS - University of Pennsylvania, Physics</li>
+              <li>BA - University of Pennsylvania, Physics</li>
             </ul>
           </div>
         </div>
