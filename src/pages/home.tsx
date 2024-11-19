@@ -69,6 +69,8 @@ export default function HomePage() {
             <b>Education</b>
             <ul className="list-disc list-inside">
               <li>PhD - Columbia University, Biomedical Informatics</li>
+              <li>M.Phil - Columbia University, Biomedical Informatics</li>
+              <li>MA - Columbia University, Biomedical Informatics</li>
               <li>MS - University of Pennsylvania, Physics</li>
               <li>BA - University of Pennsylvania, Physics</li>
             </ul>
