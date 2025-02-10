@@ -1,0 +1,121 @@
+---
+interface PublicationLinks {
+  abstract: string;
+  html: string;
+  pdf: string;
+}
+
+interface PublicationProps {
+  title: string;
+  authors: string[];
+  journal: string;
+  year: string;
+  volume?: string;
+  issue?: string;
+  doi: string;
+  links: PublicationLinks;
+}
+
+import AltmetricEmbed from "./icons/altmetric.astro";
+
+const {
+  title,
+  authors,
+  journal,
+  year,
+  volume,
+  issue,
+  doi,
+  links,
+} = Astro.props;
+---
+
+<div class="w-full max-w-5xl rounded-lg border border-gray-200 p-6 shadow-sm">
+  <div class="flex flex-col items-start gap-2">
+    <!-- Title -->
+    <h2 class="text-xl font-semibold">{title}</h2>
+
+    <!-- Authors -->
+    <p class="text-sm text-gray-600">
+      {authors.map((author, index) => (
+        <>
+          {author === "Michael Zietz"
+            ? <strong class="underline">Michael Zietz</strong>
+            : author}
+          {index < authors.length - 1 ? ", " : ""}
+        </>
+      ))}
+    </p>
+
+    <!-- Journal Info -->
+    <p class="text-sm text-gray-600">
+      <span class="font-medium">{journal}</span>
+      {` (${year})`}
+      {volume && issue ? `, ${volume}(${issue})` : ""}
+    </p>
+
+    <!-- Links and DOI -->
+    <div class="flex w-full flex-row justify-between">
+      <div class="flex flex-col gap-4">
+        <!-- Abstract, PDF, HTML buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button
+            class="toggle-abstract cursor-pointer rounded-md border border-gray-300 px-3 py-1 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+            data-doi={doi}
+          >
+            Abstract
+          </button>
+          <a
+            href={links.html}
+            class="rounded-md border border-gray-300 px-3 py-1 text-sm no-underline hover:bg-gray-50 dark:hover:bg-gray-800"
+            target="_blank"
+            rel="noreferrer"
+          >
+            HTML
+          </a>
+          <a
+            href={links.pdf}
+            class="rounded-md border border-gray-300 px-3 py-1 text-sm no-underline hover:bg-gray-50 dark:hover:bg-gray-800"
+            target="_blank"
+            rel="noreferrer"
+          >
+            PDF
+          </a>
+        </div>
+
+        <!-- Toggle-able abstract -->
+        <div
+          id={`abstract-${doi}`}
+          class="hidden rounded-md bg-muted p-4 text-sm"
+        >
+          {links.abstract}
+        </div>
+
+        <!-- DOI badge -->
+        <a
+          href={`https://doi.org/${doi}`}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex self-start rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-700 no-underline hover:bg-gray-200"
+        >
+          DOI: {doi}
+        </a>
+      </div>
+
+      <AltmetricEmbed doi={doi} />
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggleButtons = document.querySelectorAll('.toggle-abstract');
+  toggleButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const doi = button.dataset.doi;
+      const abstractEl = document.getElementById(`abstract-${doi}`);
+      if (abstractEl) {
+        abstractEl.classList.toggle('hidden');
+      }
+    });
+  });
+</script>

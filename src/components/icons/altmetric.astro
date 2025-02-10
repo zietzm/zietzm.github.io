@@ -1,0 +1,14 @@
+---
+interface AltmetricEmbedProps {
+  doi: string;
+}
+
+const { doi } = Astro.props;
+---
+
+<div
+  class="altmetric-embed"
+  data-badge-type="donut"
+  data-doi={doi}
+  data-link-target="_blank">
+</div>
