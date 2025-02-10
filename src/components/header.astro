@@ -1,0 +1,57 @@
+---
+// (link.href === "/" && link.href == pathname) || (link.href !== "/" && pathname.startsWith(link.href))
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import faviconUrl from "../assets/favicon.svg";
+
+let { pathname } = Astro.url;
+if (pathname !== "/" && pathname.endsWith("/")) {
+  pathname = pathname.slice(0, -1);
+}
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/publications", label: "Publications" },
+  // { href: "/projects", label: "Projects" },
+  // { href: "/blog", label: "Blog" },
+];
+---
+<header class="lg:flex p-5 gap-5">
+  <Astronav>
+    <div class="flex w-full justify-between">
+       <a
+          href="/"
+          class="dark:border dark:border-1 dark:rounded-md dark:border-white"
+        >
+          <img
+            alt="logo"
+            src={faviconUrl.src}
+            class="h-8 w-8 mx-2 md:mx-0"
+          />
+        </a>
+
+      <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-gray-800" />
+      </div>
+    </div>
+    <MenuItems class="hidden lg:flex">
+        <ul class="flex flex-col gap-4 mt-6 lg:mt-0 lg:flex-row lg:gap-2">
+          {links.map((link) => (
+            <li key={link.href}>
+              <div class="inline-block transition-transform hover:scale-105">
+                <a
+                  href={link.href}
+                  class={`no-underline rounded-lg px-2 py-2 hover:text-primary/90 hover:bg-primary/10 ${
+                  link.href === pathname
+                      ? "bg-foreground text-background"
+                      : "bg-background text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+    </MenuItems>
+  </Astronav>
+</header>

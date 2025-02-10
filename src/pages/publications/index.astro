@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Publication from "../../components/publication.tsx"
+import { publications } from "./config.ts"
+---
+
+<Layout>
+  <h3 class="my-10 text-center">Publications</h3>
+
+  <div class="grid grid-cols-1 gap-6">
+        {publications.map((publication) => (
+          <Publication key={publication.title} {...publication} client:load />
+        ))}
+  </div>
+  <script is:inline type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+</Layout>
