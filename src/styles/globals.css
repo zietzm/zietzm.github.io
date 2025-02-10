@@ -96,6 +96,9 @@
 
 /* Custom typography and element styles */
 @layer base {
+  html {
+    scrollbar-gutter: stable both-edges;
+  }
   h1 {
     font-size: 2.5em;
     line-height: 1;
