@@ -1,21 +1,4 @@
 ---
-interface PublicationLinks {
-  abstract: string;
-  html: string;
-  pdf: string;
-}
-
-interface PublicationProps {
-  title: string;
-  authors: string[];
-  journal: string;
-  year: string;
-  volume?: string;
-  issue?: string;
-  doi: string;
-  links: PublicationLinks;
-}
-
 import AltmetricEmbed from "./icons/altmetric.astro";
 
 const {
@@ -88,7 +71,7 @@ const {
           id={`abstract-${doi}`}
           class="hidden rounded-md bg-muted p-4 text-sm"
         >
-          {links.abstract}
+          {links.abs}
         </div>
 
         <!-- DOI badge -->

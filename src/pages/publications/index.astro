@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Publication from "../../components/Publication.astro"
-import { publications } from "./config.ts"
+import { publications } from "../../config/publications.ts"
 ---
 
 <Layout>
@@ -9,7 +9,7 @@ import { publications } from "./config.ts"
 
   <div class="grid grid-cols-1 gap-6">
         {publications.map((publication) => (
-          <Publication key={publication.title} {...publication} client:load />
+          <Publication key={publication.title} {...publication} />
         ))}
   </div>
 </Layout>
