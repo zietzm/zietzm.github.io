@@ -6,7 +6,7 @@ description: A deep dive into optimizing a Haskell-based satellite decoder throu
 categories: ["Haskell", "Performance Optimization", "Signal Processing", "Satellite Decoding"]
 ---
 
-I've recently been building a proof-of-concept [APT](https://www.sigidwiki.com/wiki/Automatic_Picture_Transmission_(APT)) decoder in [Haskell](https://www.haskell.org/).
+I've recently been building a proof-of-concept [APT](https://www.sigidwiki.com/wiki/Automatic_Picture_Transmission_(APT)) decoder in [Haskell](https://www.haskell.org/) (see the [GitHub repo](https://github.com/zietzm/satellite)).
 The 30,000 foot picture of this is that NOAA satellites orbit the Earth, continuously transmitting images in radio signals.
 These signals can be decoded to images, which can give you up-to-date satellite views of your area.
 
