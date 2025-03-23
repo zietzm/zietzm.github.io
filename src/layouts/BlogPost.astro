@@ -1,0 +1,126 @@
+---
+import Layout from './Layout.astro';
+import { formatDate } from '../utils/date';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <article class="prose dark:prose-invert prose-lg max-w-none">
+    <div class="mb-8">
+      <h1 class="mb-2">{frontmatter.title}</h1>
+      <div class="flex items-center gap-4 text-secondary mb-6">
+        <time datetime={frontmatter.date}>
+          {formatDate(frontmatter.date)}
+        </time>
+        {frontmatter.categories && (
+          <div class="flex gap-2">
+            {frontmatter.categories.map((category) => (
+              <span class="text-sm px-2 py-1 rounded-full bg-muted">
+                {category}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {frontmatter.image && (
+        <img
+          src={frontmatter.image}
+          alt={frontmatter.imageAlt || frontmatter.title}
+          class="w-full rounded-lg object-cover mb-6 max-h-80"
+        />
+      )}
+    </div>
+
+    <div class="blog-content">
+      <slot />
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  .blog-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-content p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-content a {
+    color: hsl(var(--secondary));
+    text-decoration: underline;
+  }
+
+  .blog-content pre,
+  .blog-content code,
+  .blog-content pre code,
+  .blog-content :not(pre) > code {
+    font-family: "Jetbrains Mono", monospace !important;
+  }
+
+  /* Target language-specific code blocks */
+  .blog-content pre[class*="language-"],
+  .blog-content code[class*="language-"],
+  .blog-content pre[class*="language-"] *,
+  .blog-content code[class*="language-"] * {
+    font-family: "Jetbrains Mono", monospace !important;
+  }
+
+  /* Target Prism tokens */
+  .blog-content .token {
+    font-family: "Jetbrains Mono", monospace !important;
+  }
+
+  .blog-content pre {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+    background-color: hsl(var(--code-bg));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .blog-content code {
+    font-size: 0.9em;
+  }
+
+  .blog-content :not(pre) > code {
+    background-color: hsl(var(--code-bg));
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.85em;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .blog-content blockquote {
+    border-left: 4px solid hsl(var(--muted));
+    padding-left: 1rem;
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+
+  .blog-content img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+  }
+</style>
