@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelly Criterion Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Kelly Criterion Calculator</h1>
+      <p class="intro">
+        Compare true probability (<code>p</code>) and market implied probability
+        (<code>p'</code>) in percent form to compute Kelly sizing.
+      </p>
+      <p class="formula">
+        Formula used (binary market):
+        <br />
+        <code>Long if p &gt; p': f = (p - p') / (1 - p')</code>
+        <br />
+        <code>Short if p &lt; p': f = (p - p') / p'</code>
+      </p>
+      <p class="note">
+        This comes from the standard Kelly setup for a binary payoff: first compute optimal
+        long size on one side, and when edge is negative, compute Kelly on the complementary
+        side and report it as a short with the same magnitude. See
+        <a href="https://en.wikipedia.org/wiki/Kelly_criterion" target="_blank" rel="noopener noreferrer">Kelly criterion (Wikipedia)</a>.
+      </p>
+
+      <section class="inputs" aria-label="Inputs">
+        <label for="trueProb">True probability (p)</label>
+        <input id="trueProb" type="number" min="0" max="100" step="0.1" value="55" />
+
+        <label for="impliedProb">Implied probability (p')</label>
+        <input id="impliedProb" type="number" min="0" max="100" step="0.1" value="50" />
+      </section>
+
+      <p id="error" class="error" role="alert" aria-live="polite"></p>
+
+      <section aria-label="Kelly sizing table">
+        <table>
+          <thead>
+            <tr>
+              <th>Strategy</th>
+              <th>Percent of bankroll</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kelly</td>
+              <td id="kellyPercent">-</td>
+            </tr>
+            <tr>
+              <td>Half Kelly</td>
+              <td id="halfKellyPercent">-</td>
+            </tr>
+            <tr>
+              <td>Quarter Kelly</td>
+              <td id="quarterKellyPercent">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="heatmap" aria-label="Kelly heatmap">
+        <h2>Kelly Heatmap</h2>
+        <p>
+          x-axis = true probability, y-axis = implied probability, color = Kelly fraction.
+          Hover any cell for exact values.
+        </p>
+        <div class="heatmap-shell">
+          <canvas
+            id="kellyHeatmap"
+            width="101"
+            height="100"
+            role="img"
+            aria-label="Kelly criterion heatmap over true and implied probabilities"
+          ></canvas>
+          <div id="heatmapTooltip" class="heatmap-tooltip" aria-hidden="true"></div>
+        </div>
+        <p id="heatmapHover" class="heatmap-hover">Hover the chart to inspect a point.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
