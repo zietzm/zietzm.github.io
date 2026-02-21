@@ -24,12 +24,12 @@ const sortedPosts = posts.sort(
           <article>
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl">{post.frontmatter.title}</h2>
-              <time datetime={post.frontmatter.date} class="text-secondary">
+              <time datetime={post.frontmatter.date} class="text-muted-foreground">
                 {formatDate(post.frontmatter.date)}
               </time>
 
               {post.frontmatter.description && (
-                <p class="mt-2 text-secondary-foreground">
+                <p class="mt-2 text-muted-foreground">
                   {post.frontmatter.description}
                 </p>
               )}

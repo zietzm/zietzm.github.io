@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props;
   <article class="prose dark:prose-invert prose-lg max-w-none">
     <div class="mb-8">
       <h1 class="mb-2">{frontmatter.title}</h1>
-      <div class="flex items-center gap-4 text-secondary mb-6">
+      <div class="mb-6 flex items-center gap-4 text-muted-foreground">
         <time datetime={frontmatter.date}>
           {formatDate(frontmatter.date)}
         </time>
@@ -66,7 +66,7 @@ const { frontmatter } = Astro.props;
   }
 
   .blog-content a {
-    color: hsl(var(--secondary));
+    color: hsl(var(--link));
     text-decoration: underline;
   }
 

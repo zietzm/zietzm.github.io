@@ -13,13 +13,13 @@ const {
 } = Astro.props;
 ---
 
-<div class="w-full max-w-5xl rounded-lg border border-gray-200 p-6 shadow-sm">
+<div class="w-full max-w-5xl rounded-lg border border-border p-6 shadow-sm">
   <div class="flex flex-col items-start gap-2">
     <!-- Title -->
     <h2 class="text-xl font-semibold">{title}</h2>
 
     <!-- Authors -->
-    <p class="text-sm text-gray-600">
+    <p class="text-sm text-muted-foreground">
       {authors.map((author, index) => (
         <>
           {author === "Michael Zietz"
@@ -31,7 +31,7 @@ const {
     </p>
 
     <!-- Journal Info -->
-    <p class="text-sm text-gray-600">
+    <p class="text-sm text-muted-foreground">
       <span class="font-medium">{journal}</span>
       {` (${year})`}
       {volume && issue ? `, ${volume}(${issue})` : ""}
@@ -43,14 +43,14 @@ const {
         <!-- Abstract, PDF, HTML buttons -->
         <div class="flex flex-wrap gap-2">
           <button
-            class="toggle-abstract cursor-pointer rounded-md border border-gray-300 px-3 py-1 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+            class="toggle-abstract cursor-pointer rounded-md border border-border px-3 py-1 text-sm hover:bg-muted"
             data-doi={doi}
           >
             Abstract
           </button>
           <a
             href={links.html}
-            class="rounded-md border border-gray-300 px-3 py-1 text-sm no-underline hover:bg-gray-50 dark:hover:bg-gray-800"
+            class="rounded-md border border-border px-3 py-1 text-sm no-underline hover:bg-muted"
             target="_blank"
             rel="noreferrer"
           >
@@ -58,7 +58,7 @@ const {
           </a>
           <a
             href={links.pdf}
-            class="rounded-md border border-gray-300 px-3 py-1 text-sm no-underline hover:bg-gray-50 dark:hover:bg-gray-800"
+            class="rounded-md border border-border px-3 py-1 text-sm no-underline hover:bg-muted"
             target="_blank"
             rel="noreferrer"
           >
@@ -79,7 +79,7 @@ const {
           href={`https://doi.org/${doi}`}
           target="_blank"
           rel="noreferrer"
-          class="inline-flex self-start rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-700 no-underline hover:bg-gray-200"
+          class="inline-flex self-start rounded-full bg-muted px-2 py-1 text-xs text-muted-foreground no-underline hover:bg-accent"
         >
           DOI: {doi}
         </a>

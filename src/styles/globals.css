@@ -61,6 +61,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     --code-bg: 210 20% 98%; /* Added: Light mode code background */
+    --link: 221 83% 43%;
   }
 
   /* Apply your custom font family globally */
@@ -107,6 +108,7 @@
       --chart-4: 280 65% 60%;
       --chart-5: 340 75% 55%;
       --code-bg: 220 14% 10%; /* Added: Dark mode code background */
+      --link: 213 94% 68%;
     }
   }
 }
@@ -175,6 +177,9 @@
 .text-secondary {
   color: hsl(var(--secondary));
 }
+.text-secondary-foreground {
+  color: hsl(var(--secondary-foreground));
+}
 .text-foreground {
   color: hsl(var(--foreground));
 }
@@ -183,4 +188,17 @@
 }
 .text-muted {
   color: hsl(var(--muted));
+}
+.text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+@media (prefers-color-scheme: dark) {
+  .altmetric-embed text,
+  .altmetric-embed .altmetric-score,
+  .altmetric-embed .score,
+  .altmetric-embed span {
+    color: hsl(var(--foreground)) !important;
+    fill: hsl(var(--foreground)) !important;
+  }
 }
